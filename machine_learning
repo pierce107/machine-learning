@@ -1,9 +1,0 @@
-p_income = {'Hoch': 0.59, 'Niedrig': 0.41}
-p_age = {'Alt': 0.46, 'Jung': 0.54}
-
-p_marketpreference = {
-( ' Hoch ' , ' Jung ' ): { ' Apple ': 0.375 , ' Android ': 0.625} ,
-( ' Hoch ' , ' Alt ' ): { ' Apple ': 0.28 , ' Android ': 0.72} ,
-( ' Niedrig ' , ' Jung ' ): { ' Apple ': 0.11 , ' Android ': 0.89} ,
-( ' Niedrig ' , ' Alt ' ): { ' Apple ': 0.16 , ' Android ': 0.84}
-}
