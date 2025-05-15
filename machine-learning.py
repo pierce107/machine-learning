@@ -1,52 +1,52 @@
 import random
 
-# fuer Einkommen und Alter
-p_income = {'Hoch': 0.59, 'Niedrig': 0.41}
-p_age = {'Alt': 0.46, 'Jung': 0.54}
+# the possiblity for income and age
+p_income= {'Hoch ': 0.4 , 'Niedrig ': 0.6}
+p_age = {'Jung ': 0.6 ,'Alt': 0.4}
 
-# Bedingte Wahrscheinlichkeitstabelle fuer Kaufentscheidung
-p_marketpreference = {
-( ' Hoch ' , ' Jung ' ): { ' Apple ': 0.375 , ' Android ': 0.625} ,
-( ' Hoch ' , ' Alt ' ): { ' Apple ': 0.28 , ' Android ': 0.72} ,
-( ' Niedrig ' , ' Jung ' ): { ' Apple ': 0.11 , ' Android ': 0.89} ,
-( ' Niedrig ' , ' Alt ' ): { ' Apple ': 0.16 , ' Android ': 0.84}
+# possiblity table for a possible purchase
+p_marketpreferenz = {
+('Hoch ', 'Jung '): {'Android ': 0.42 , 'Apple ': 0.56} ,
+('Hoch ', 'Alt '): {'Android ': 0.5 , 'Apple ': 0.5} ,
+('Niedrig ', 'Jung '): {'Android ': 0.8 , 'Apple ': 0.2} ,
+('Niedrig ', 'Alt '): {'Android ': 0.9 , 'Apple ': 0.1}
 }
 
-random_income = round(random.random(), 3)
-random_age = round(random.random(), 3)
+# empty lists for initialize
+age = []
+income = []
+brand = []
 
-Nutzer = float(input('Wieviel verdienen Sie: '))
+for i in range(10):
+  # possiblity for a person to be young
+  # adds to the list 'age' a random number (possiblity)
+  age.append(round(random.random(), 3))
+  # prints out the random number
+  print(age[i])
+  # if the printed random number is lower than the above written possiblity for age, then it is young
+  if age[i] <= p_age['Jung ']:
+    print('Jung')
+  else:
+    print('Alt')
 
-for count in range(1): 
-    print(Nutzer)
-    if Nutzer <= p_income['Hoch ']:
-        print('Hoch')
-    else:
-        print('Niedrig')
+# possiblity for a person to be rich
+  income.append(round(random.random(), 3))
+  print(income[i])
+  if income[i] <= p_income['Hoch ']:
+    print('Hoch')
+  else:
+    print('Niedrig')
+
+# possiblity for a person to buy an Android phone according to the possiblity table for a purchase
+  brand.append(round(random.random(), 3))
+  print(brand[i])
+  # the possiblity to buy an Android for a rich and young person 
+  if brand[i] <= p_marketpreferenz[('Hoch ', 'Jung ')]['Android ']:
+    print('Android')
+  else:
+    print('Apple')
 
 
+  print('\n')
 
-
-# for count in range(3): 
-#   print(random_einkommen)
-#   if random_einkommen <= p_einkommen['Hoch ']:
-#     print('Hoch')
-#   else:
-#     print('Niedrig')
-
-# for count in range(3): 
-#   print(random_alter)
-#   if random_alter <= p_alter['Jung ']:
-#     print('Jung')
-#   else:
-#     print('Alt')
-
-
-
-#  print(round(random.random(),3))
-  # if nummer <= p_einkommen['Hoch ']:
-  #   print('Hoch')
-#  else:
-#    print('Niedrig')
-
-#print(p_einkommen['Hoch '])
+#Die Fragen der Präsentationen in Powerpoint vorstellen 
